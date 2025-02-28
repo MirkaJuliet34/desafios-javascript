@@ -41,13 +41,16 @@ function handshakes(n) {
     return n * (n - 1) / 2;
 }
 
-function main() {
-    const testCases = [1, 2]; // Exemplo de entrada
-    const results = [];
-    for (let i = 0; i < testCases.length; i++) {
-        results.push(handshakes(testCases[i]));
+function main(input) {
+    const lines = input.split("\n");
+    const T = parseInt(lines[0], 10);
+    let output = "";
+    for (let i = 1; i <= T; i++) {
+        const n = parseInt(lines[i], 10);
+        output += handshakes(n) + "\n";
     }
-    console.log(results.join("\n"));
+    console.log(output.trim());
 }
 
-main();
+const input = "2\n1\n2";
+main(input);
